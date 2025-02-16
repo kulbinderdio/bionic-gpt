@@ -43,4 +43,3 @@ axum_typed_multipart = { version = "0.15.1", default-features = false }
 
 [dev-dependencies]
 time = "0.3.36"
-

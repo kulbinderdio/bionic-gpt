@@ -8,6 +8,7 @@ use daisy_rsx::*;
 use db::authz::Rbac;
 use db::queries::prompts::{Prompt, SinglePrompt};
 use dioxus::prelude::*;
+use rust_i18n::t;
 
 pub fn page(
     team_id: i32,
@@ -25,7 +26,7 @@ pub fn page(
         super::layout::ConsoleLayout {
             team_id: team_id,
             rbac: rbac.clone(),
-            title: "AI Chat Console",
+            title: &t!("console-title"),
             prompt: prompt.clone(),
             selected_item: SideBar::Console,
             chats_with_chunks,
@@ -83,7 +84,7 @@ fn Head(
             a {
                 href: crate::routes::console::Index{team_id}.to_string(),
                 class: "btn btn-primary btn-sm mr-4",
-                "New Chat"
+                {t!("new-chat-button")}
             }
         }
     }

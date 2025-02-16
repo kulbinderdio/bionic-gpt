@@ -1,6 +1,8 @@
 use db::Visibility;
 use dioxus::prelude::Element;
 
+rust_i18n::i18n!("locales");
+
 pub mod api_keys;
 pub mod app_layout;
 pub mod audit_trail;

@@ -4920,6 +4920,7 @@ dependencies = [
  "db",
  "dioxus",
  "dioxus-ssr",
+ "rust-i18n",
  "serde",
  "time",
 ]

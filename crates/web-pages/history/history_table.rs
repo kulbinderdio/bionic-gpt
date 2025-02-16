@@ -1,6 +1,7 @@
 #![allow(non_snake_case)]
 use daisy_rsx::*;
 use dioxus::prelude::*;
+use rust_i18n::t;
 
 #[component]
 pub fn HistoryTable(team_id: i32, buckets: Vec<super::HistoryBucket>) -> Element {
@@ -18,9 +19,9 @@ pub fn HistoryTable(team_id: i32, buckets: Vec<super::HistoryBucket>) -> Element
                             thead {
                                 th {
                                     "width": "200",
-                                    "Time"
+                                    {t!("history-time")}
                                 }
-                                th { "Summary" }
+                                th { {t!("history-summary")} }
                             }
                             tbody {
                                 for history in bucket.histories {

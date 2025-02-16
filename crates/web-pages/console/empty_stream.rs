@@ -4,6 +4,7 @@ use crate::routes;
 use assets::files::*;
 use db::queries::prompts::SinglePrompt;
 use dioxus::prelude::*;
+use rust_i18n::t;
 
 #[component]
 pub fn EmptyStream(prompt: SinglePrompt, conversation_id: Option<i64>, team_id: i32) -> Element {
@@ -18,7 +19,7 @@ pub fn EmptyStream(prompt: SinglePrompt, conversation_id: Option<i64>, team_id: 
             class: "mx-auto mt-12 max-w-3xl text-center",
             h1 {
                 class: "mb-8 text-2xl font-semibold relative before:absolute before:inset-0 before:animate-typewriter before:bg-base-100",
-                "What can I help with?"
+                {t!("help-question")}
             }
             div {
                 class: "grid grid-cols-2 md:grid-cols-4 pl-2 pr-2 max-w-3xl flex-wrap items-stretch justify-center gap-4",

@@ -19,3 +19,4 @@ serde = "1"
 daisy_rsx = "0.1.14"
 comrak = { version = "0", default-features = false }
 time = "0.3.36"
+rust-i18n = "3"

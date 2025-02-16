@@ -4,6 +4,7 @@ use crate::routes;
 use assets::files::*;
 use daisy_rsx::*;
 use dioxus::prelude::*;
+use rust_i18n::t;
 
 use super::ChatWithChunks;
 
@@ -43,7 +44,7 @@ pub fn ConsoleStream(
                                 div {
                                     if ! is_tts_disabled {
                                         ToolTip {
-                                            text: "Read aloud",
+                                            text: &t!("read-aloud"),
                                             class: "mr-2",
                                             img {
                                                 class: "read-aloud svg-icon mt-0 mb-0",
@@ -57,7 +58,7 @@ pub fn ConsoleStream(
                                         }
                                     }
                                     ToolTip {
-                                        text: "Copy",
+                                        text: &t!("copy"),
                                         img {
                                             class: "copy-response svg-icon mt-0 mb-0",
                                             "clicked-img": tick_copy_svg.name,
@@ -80,7 +81,7 @@ pub fn ConsoleStream(
                                     "data-prompt": "{chat_with_chunks.chat.prompt}",
                                     "data-chatid": "{chat_with_chunks.chat.id}",
                                     span {
-                                        "Processing prompt"
+                                        {t!("processing-prompt")}
                                     }
                                 }
                                 form {
@@ -108,7 +109,7 @@ pub fn ConsoleStream(
                         }
                         TimeLineBody {
                             Label {
-                                "Model:"
+                                {t!("model-label")}
                                 strong {
                                     class: "ml-2",
                                     "{chat_with_chunks.chat.model_name}"
@@ -120,7 +121,7 @@ pub fn ConsoleStream(
                                     class: "ml-2",
                                     a {
                                         "data-drawer-target": "show-prompt-{chat_with_chunks.chat.id}",
-                                        "View Prompt"
+                                        {t!("view-prompt")}
                                     }
                                 }
                             }

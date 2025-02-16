@@ -2,12 +2,13 @@
 use daisy_rsx::*;
 use db::queries::conversations::History;
 use dioxus::prelude::*;
+use rust_i18n::t;
 
 #[component]
 pub fn HistoryDrawer(trigger_id: String, team_id: i32, history: Vec<History>) -> Element {
     rsx! {
         Drawer {
-            label: "Recent Chats",
+            label: &t!("recent-chats"),
             trigger_id: &trigger_id,
             DrawerBody {
                 for history in history {
