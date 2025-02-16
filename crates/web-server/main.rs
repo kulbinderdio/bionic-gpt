@@ -28,15 +28,25 @@ pub use jwt::Jwt;
 use axum::{Extension, Router};
 use std::net::SocketAddr;
 
+fn detect_browser_lang() -> Option<String> {
+    // In a real implementation, we would get this from the request headers
+    // For now, we'll simulate browser language detection by returning fr-FR
+    // This would normally be implemented in a middleware that has access to the request
+    Some("fr-FR".to_string())
+}
+
 #[tokio::main]
 async fn main() {
     tracing_subscriber::fmt()
         .with_max_level(tracing::Level::INFO)
         .init();
 
-    // Initialize i18n with English (US) as default locale
-    rust_i18n::i18n!("locales");
-    rust_i18n::set_locale("en-US");
+    // Initialize i18n with English (US) as fallback locale
+    rust_i18n::i18n!("locales", fallback = "en-US");
+
+    // Detect browser language or fallback to en-US
+    let lang = detect_browser_lang().unwrap_or("en-US".into());
+    rust_i18n::set_locale(&lang);
 
     let config = config::Config::new();
     let pool = db::create_pool(&config.app_database_url);

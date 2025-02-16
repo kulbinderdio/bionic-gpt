@@ -1,0 +1,37 @@
+welcome-header = Welcome to Bionic GPT
+new-chat-button = New Chat
+chat-history-empty = No chat history available
+model-loading = Loading model...
+help-question = What can I help with?
+recent-chats = Recent Chats
+console-title = AI Chat Console
+history-time = Time
+history-summary = Summary
+history-title = Chat History
+history-search = Search History
+history-empty-heading = Looks like you haven't had any conversations yet
+history-empty-description = When you do a summary will appear on this page
+history-hero-subheading = Easily reference past conversations to recall information, follow up on topics, or continue where you left off.
+read-aloud = Read aloud
+copy = Copy
+processing-prompt = Processing prompt
+model-label = Model:
+view-prompt = View Prompt
+
+# Navigation
+nav-generative-ai = Generative AI
+nav-chat = Chat
+nav-chat-history = Chat History
+nav-ai-assistants = AI Assistants
+nav-explore-assistants = Explore Assistants
+nav-datasets-documents = Datasets & Documents
+nav-developers = Developers
+nav-api-keys = API Keys
+nav-data-integrations = Data Integrations
+nav-collaboration = Collaboration
+nav-team-members = Team Members
+nav-your-teams = Your Teams
+nav-system-admin = System Admin
+nav-model-setup = Model Setup
+nav-audit-trail = Audit Trail
+nav-rate-limits = Rate Limits

@@ -1,4 +1,6 @@
 #![allow(non_snake_case)]
+rust_i18n::i18n!("locales", fallback = "en-US");
+
 use super::logout_form::LogoutForm;
 use super::snackbar::Snackbar;
 use crate::profile_popup::ProfilePopup;
@@ -6,6 +8,7 @@ use assets::files::*;
 use daisy_rsx::{NavGroup, NavItem};
 use db::authz::Rbac;
 use dioxus::prelude::*;
+use rust_i18n::t;
 
 #[derive(PartialEq, Clone, Eq, Debug)]
 pub enum SideBar {
@@ -60,27 +63,27 @@ pub fn Layout(props: LayoutProps) -> Element {
             ),
             sidebar: rsx!(
                 NavGroup {
-                    heading: "Generative AI",
+                    heading: &t!("nav-generative-ai"),
                     content:  rsx!(
                         NavItem {
                             id: SideBar::Console.to_string(),
                             selected_item_id: props.selected_item.to_string(),
                             href: super::routes::console::Index { team_id: props.team_id },
                             icon: nav_service_requests_svg.name,
-                            title: "Chat"
+                            title: &t!("nav-chat")
                         }
                         NavItem {
                             id: SideBar::History.to_string(),
                             selected_item_id: props.selected_item.to_string(),
                             href: super::routes::history::Index { team_id: props.team_id },
                             icon: nav_history_svg.name,
-                            title: "Chat History"
+                            title: &t!("nav-chat-history")
                         }
                     )
                 }
                 if props.rbac.can_view_datasets() {
                     NavGroup {
-                        heading: "AI Assistants",
+                        heading: &t!("nav-ai-assistants"),
                         content:  rsx!(
                             if props.rbac.can_view_prompts() {
                                 NavItem {
@@ -88,7 +91,7 @@ pub fn Layout(props: LayoutProps) -> Element {
                                     selected_item_id: props.selected_item.to_string(),
                                     href: super::routes::prompts::Index{team_id: props.team_id},
                                     icon: assistant_svg.name,
-                                    title: "Explore Assistants"
+                                    title: &t!("nav-explore-assistants")
                                 }
                             }
                             NavItem {
@@ -96,77 +99,77 @@ pub fn Layout(props: LayoutProps) -> Element {
                                 selected_item_id: props.selected_item.to_string(),
                                 href: super::routes::datasets::Index{team_id: props.team_id},
                                 icon: nav_ccsds_data_svg.name,
-                                title: "Datasets & Documents"
+                                title: &t!("nav-datasets-documents")
                             }
                         )
                     }
                 }
                 if props.rbac.can_use_api_keys() {
                     NavGroup {
-                        heading: "Developers",
+                        heading: &t!("nav-developers"),
                         content:  rsx!(
                             NavItem {
                                 id: SideBar::ApiKeys.to_string(),
                                 selected_item_id: props.selected_item.to_string(),
                                 href: super::routes::api_keys::Index { team_id: props.team_id },
                                 icon: nav_api_keys_svg.name,
-                                title: "API Keys"
+                                title: &t!("nav-api-keys")
                             }
                             NavItem {
                                 id: SideBar::DocumentPipelines.to_string(),
                                 selected_item_id: props.selected_item.to_string(),
                                 href: super::routes::document_pipelines::Index { team_id: props.team_id },
                                 icon: nav_ccsds_data_svg.name,
-                                title: "Data Integrations"
+                                title: &t!("nav-data-integrations")
                             }
                         )
                     }
                 }
                 if props.rbac.can_view_teams() {
                     NavGroup {
-                        heading: "Collaboration",
+                        heading: &t!("nav-collaboration"),
                         content:  rsx!(
                             NavItem {
                                 id: SideBar::Team.to_string(),
                                 selected_item_id: props.selected_item.to_string(),
                                 href: super::routes::team::Index{team_id:props.team_id},
                                 icon: nav_members_svg.name,
-                                title: "Team Members"
+                                title: &t!("nav-team-members")
                             }
                             NavItem {
                                 id: SideBar::Switch.to_string(),
                                 selected_item_id: props.selected_item.to_string(),
                                 href: super::routes::teams::Switch{team_id:props.team_id},
                                 icon: nav_teams_svg.name,
-                                title: "Your Teams"
+                                title: &t!("nav-your-teams")
                             }
                         )
                     }
                 }
                 if props.rbac.can_view_audit_trail() || props.rbac.can_setup_models() {
                     NavGroup {
-                        heading: "System Admin",
+                        heading: &t!("nav-system-admin"),
                         content:  rsx!(
                             NavItem {
                                 id: SideBar::Models.to_string(),
                                 selected_item_id: props.selected_item.to_string(),
                                 href: super::routes::models::Index{team_id: props.team_id},
                                 icon: nav_phonebook_svg.name,
-                                title: "Model Setup"
+                                title: &t!("nav-model-setup")
                             }
                             NavItem {
                                 id: SideBar::AuditTrail.to_string(),
                                 selected_item_id: props.selected_item.to_string(),
                                 href: super::routes::audit_trail::Index { team_id: props.team_id },
                                 icon: nav_audit_svg.name,
-                                title: "Audit Trail"
+                                title: &t!("nav-audit-trail")
                             }
                             NavItem {
                                 id: SideBar::RateLimits.to_string(),
                                 selected_item_id: props.selected_item.to_string(),
                                 href: super::routes::rate_limits::Index { team_id: props.team_id },
                                 icon: limits_svg.name,
-                                title: "Rate Limits"
+                                title: &t!("nav-rate-limits")
                             }
                             /***NavItem {
                                 id: SideBar::Security.to_string(),
