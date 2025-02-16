@@ -8,6 +8,7 @@ name = "web-server"
 path = "main.rs"
 
 [dependencies]
+rust-i18n = "3"
 db = { path = "../db" }
 llm-proxy = { path = "../llm-proxy" }
 object-storage = { path = "../object-storage" }

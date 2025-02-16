@@ -34,6 +34,10 @@ async fn main() {
         .with_max_level(tracing::Level::INFO)
         .init();
 
+    // Initialize i18n with English (US) as default locale
+    rust_i18n::i18n!("locales");
+    rust_i18n::set_locale("en-US");
+
     let config = config::Config::new();
     let pool = db::create_pool(&config.app_database_url);
     let addr = SocketAddr::from(([0, 0, 0, 0], config.port));
