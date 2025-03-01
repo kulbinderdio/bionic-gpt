@@ -3,6 +3,7 @@ pub mod index;
 pub mod table;
 
 use db::{AuditAccessType, AuditAction};
+use crate::i18n_helper::translate;
 
 const AUDIT_ACCESS: [AuditAccessType; 2] = [AuditAccessType::UserInterface, AuditAccessType::API];
 
@@ -30,7 +31,7 @@ pub fn position_to_audit_action(num: usize) -> AuditAction {
 pub fn access_type_to_string(access_type: AuditAccessType) -> String {
     match access_type {
         AuditAccessType::API => "API".to_owned(),
-        AuditAccessType::UserInterface => "User Interface".to_owned(),
+        AuditAccessType::UserInterface => translate("model-type-ui"),
     }
 }
 

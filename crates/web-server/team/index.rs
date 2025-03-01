@@ -4,6 +4,7 @@ use db::authz;
 use db::queries;
 use db::Pool;
 use web_pages::{routes::team::Index, team};
+use i18n::get_message;
 
 pub async fn index(
     Index { team_id }: Index,
@@ -38,7 +39,7 @@ pub async fn index(
     let team_name = if let Some(team) = &team.name {
         format!("Team : {}", team)
     } else {
-        "Team : No Name ".to_string()
+        get_message("team-no-name")
     };
 
     let html = team::members::page(rbac, members, invites, team, user, team_name);

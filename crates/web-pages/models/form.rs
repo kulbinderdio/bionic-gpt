@@ -1,6 +1,7 @@
 #![allow(non_snake_case)]
 use daisy_rsx::{select::SelectOption, *};
 use dioxus::prelude::*;
+use crate::i18n_helper::translate;
 
 #[component]
 pub fn Form(
@@ -91,12 +92,12 @@ pub fn Form(
                                 SelectOption {
                                     value: "LLM",
                                     selected_value: model_type.clone(),
-                                    "Large Language Model"
+                                    "{translate(\"model-type-llm\")}"
                                 }
                                 SelectOption {
                                     value: "Embeddings",
                                     selected_value: model_type.clone(),
-                                    "Embeddings Model"
+                                    "{translate(\"model-type-embeddings\")}"
                                 }
                                 SelectOption {
                                     value: "Image",

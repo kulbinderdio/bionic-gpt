@@ -2,6 +2,7 @@
 use daisy_rsx::*;
 use db::Role as DBRole;
 use dioxus::prelude::*;
+use crate::i18n_helper::translate;
 
 #[component]
 pub fn Role(role: DBRole) -> Element {
@@ -17,14 +18,14 @@ pub fn Role(role: DBRole) -> Element {
             Label {
                 class: "mr-2",
                 label_role: LabelRole::Neutral,
-                "Team Manager"
+                "{translate(\"team-role-manager\")}"
             }
         ),
         DBRole::Collaborator => rsx!(
             Label {
                 class: "mr-2",
                 label_role: LabelRole::Neutral,
-                "Collaborator"
+                "{translate(\"team-role-collaborator\")}"
             }
         ),
     }

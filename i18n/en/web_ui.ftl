@@ -162,6 +162,22 @@ teams-invite-pending = Invite Pending
 teams-remove-user = Remove User From Team
 teams-delete-invite = Delete Invite
 
+# Your Teams
+your-teams-title = Your Teams
+your-teams-create = Create a New Team
+your-teams-teams = Teams
+your-teams-team = Team
+your-teams-creator = Team Creator
+your-teams-action = Action
+your-teams-switch = Switch to this Team
+your-teams-name-not-set = Name Not Set
+your-teams-delete = Delete Team
+your-teams-invitations = You have invitations to join the following teams
+your-teams-accept = Accept Invite
+your-teams-create-new = Create a new team?
+your-teams-give-name = Give your new team a name
+your-teams-name = Name
+
 # Audit Trail
 audit-trail-title = Audit Trail
 audit-trail-empty = No audit records found.
@@ -279,6 +295,16 @@ sidebar-data-integrations = Data Integrations
 sidebar-team-members = Team Members
 sidebar-your-teams = Your Teams
 sidebar-model-setup = Model Setup
+
+# Team Roles
+team-role-manager = Team Manager
+team-role-collaborator = Collaborator
+team-no-name = Team : No Name
+
+# Model Types
+model-type-embeddings = Embeddings Model
+model-type-llm = Large Language Model
+model-type-ui = User Interface
 
 # Basic test messages (for unit tests)
 test-message = This is a test message

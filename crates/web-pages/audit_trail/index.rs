@@ -2,6 +2,7 @@
 use daisy_rsx::*;
 use db::{authz::Rbac, AuditTrail, Member};
 use dioxus::prelude::*;
+use crate::i18n_helper::translate;
 
 use crate::{
     app_layout::{Layout, SideBar},
@@ -22,13 +23,13 @@ pub fn page(
             selected_item: SideBar::AuditTrail,
             team_id: team_id,
             rbac: rbac,
-            title: "Audit Trail",
+            title: "{translate(\"audit-trail-title\")}",
             header: rsx! {
-                h3 { "Audit Trail" }
+                h3 { "{translate(\"audit-trail-title\")}" }
                 Button {
                     drawer_trigger: super::filter::DRAW_TRIGGER,
                     button_scheme: ButtonScheme::Default,
-                    "Filter"
+                    "{translate(\"common-filter\")}"
                 }
             },
             super::table::AuditTable {

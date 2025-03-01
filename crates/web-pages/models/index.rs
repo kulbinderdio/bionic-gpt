@@ -1,5 +1,6 @@
 #![allow(non_snake_case)]
 use crate::app_layout::{Layout, SideBar};
+use crate::i18n_helper::translate;
 use assets::files::*;
 use daisy_rsx::*;
 use db::authz::Rbac;
@@ -13,14 +14,14 @@ pub fn page(team_id: i32, rbac: Rbac, models: Vec<ModelWithPrompt>) -> String {
             selected_item: SideBar::Models,
             team_id: team_id,
             rbac: rbac,
-            title: "Models",
+            title: "{translate(\"models-title\")}",
             header: rsx!(
-                h3 { "Models" }
+                h3 { "{translate(\"models-title\")}" }
                 Button {
                     prefix_image_src: "{button_plus_svg.name}",
                     drawer_trigger: "new-model-form",
                     button_scheme: ButtonScheme::Primary,
-                    "Add Model"
+                    "{translate(\"models-create\")}"
                 }
             ),
 

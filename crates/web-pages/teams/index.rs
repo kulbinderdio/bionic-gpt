@@ -1,5 +1,6 @@
 #![allow(non_snake_case)]
 use crate::app_layout::{Layout, SideBar};
+use crate::i18n_helper::translate;
 use assets::files::button_plus_svg;
 use daisy_rsx::*;
 use db::authz::Rbac;
@@ -19,30 +20,30 @@ pub fn page(
             selected_item: SideBar::Switch,
             team_id: team_id,
             rbac: rbac,
-            title: "Your Teams",
+            title: "{translate(\"your-teams-title\")}",
             header: rsx!(
-                h3 { "Your Teams" }
+                h3 { "{translate(\"your-teams-title\")}" }
                 Button {
                     prefix_image_src: "{button_plus_svg.name}",
                     drawer_trigger: "create-new-team",
                     button_scheme: ButtonScheme::Primary,
-                    "Create a New Team"
+                    "{translate(\"your-teams-create\")}"
                 }
             ),
             Card {
                 class: "has-data-table",
                 CardHeader {
-                    title: "Teams"
+                    title: "{translate(\"your-teams-teams\")}"
                 }
                 CardBody {
                     table {
                         class: "table table-sm",
                         thead {
-                            th { "Team" }
-                            th { "Team Creator" }
+                            th { "{translate(\"your-teams-team\")}" }
+                            th { "{translate(\"your-teams-creator\")}" }
                             th {
                                 class: "text-right",
-                                "Action"
+                                "{translate(\"your-teams-action\")}"
                             }
                         }
                         tbody {
@@ -63,7 +64,7 @@ pub fn page(
                                                 a {
                                                     "data-turbo-frame": "_top",
                                                     href: crate::routes::team::Index{ team_id: team.id }.to_string(),
-                                                    "(Switch to this Team)"
+                                                    "({translate(\"your-teams-switch\")})"
                                                 }
                                             }
                                         }
@@ -82,7 +83,7 @@ pub fn page(
                                                         drawer_trigger: format!("delete-trigger-{}", team.id),
                                                         href: "#",
                                                         target: "_top",
-                                                        "Delete Team"
+                                                        "{translate(\"your-teams-delete\")}"
                                                     }
                                                 }
                                             }
@@ -98,15 +99,15 @@ pub fn page(
                                             Avatar {
                                                 avatar_type: avatar::AvatarType::Team
                                             }
-                                            span {
-                                                class: "ml-2 mr-2",
-                                                "Name Not Set"
-                                            }
-                                            if team.id != team_id {
-                                                a {
-                                                    "data-turbo-frame": "_top",
-                                                    href: crate::routes::team::Index{ team_id: team.id }.to_string(),
-                                                    "(Switch to this Team)"
+                                                span {
+                                                    class: "ml-2 mr-2",
+                                                    "{translate(\"your-teams-name-not-set\")}"
+                                                }
+                                                if team.id != team_id {
+                                                    a {
+                                                        "data-turbo-frame": "_top",
+                                                        href: crate::routes::team::Index{ team_id: team.id }.to_string(),
+                                                        "({translate(\"your-teams-switch\")})"
                                                 }
                                             }
                                         }
@@ -125,7 +126,7 @@ pub fn page(
                                                         drawer_trigger: format!("delete-trigger-{}", team.id),
                                                         href: "#",
                                                         target: "_top",
-                                                        "Delete Team"
+                                                        "{translate(\"your-teams-delete\")}"
                                                     }
                                                 }
                                             }
@@ -146,19 +147,19 @@ pub fn page(
             Card {
                 class: "has-data-table mt-8",
                 CardHeader {
-                    title: "You have invitations to join the following teams"
+                    title: "{translate(\"your-teams-invitations\")}"
                 }
                 CardBody {
                     table {
                         class: "table table-sm",
                         thead {
-                            th { "Team" }
+                            th { "{translate(\"your-teams-team\")}" }
                             th {
-                                "Team Creator"
+                                "{translate(\"your-teams-creator\")}"
                             }
                             th {
                                 class: "text-right",
-                                "Action"
+                                "{translate(\"your-teams-action\")}"
                             }
                         }
                         tbody {
@@ -178,7 +179,7 @@ pub fn page(
                                             drawer_trigger: format!("accept-invite-trigger-{}", invite.id),
                                             href: "#",
                                             target: "_top",
-                                            "Accept Invite"
+                                            "{translate(\"your-teams-accept\")}"
                                         }
                                     }
                                 }
@@ -208,17 +209,17 @@ pub fn page(
                 "data-turbo-frame": "_top",
                 action: crate::routes::teams::New{team_id}.to_string(),
                 Drawer {
-                    label: "Create a new team?",
+                    label: "{translate(\"your-teams-create-new\")}",
                     trigger_id: "create-new-team",
                     DrawerBody {
                         div {
                             class: "flex flex-col",
                             Input {
                                 input_type: InputType::Text,
-                                placeholder: "Team Name",
-                                help_text: "Give your new team a name",
+                                placeholder: "{translate(\"your-teams-team\")}",
+                                help_text: "{translate(\"your-teams-give-name\")}",
                                 required: true,
-                                label: "Name",
+                                label: "{translate(\"your-teams-name\")}",
                                 name: "name"
                             }
                         }
@@ -227,7 +228,7 @@ pub fn page(
                         Button {
                             button_type: ButtonType::Submit,
                             button_scheme: ButtonScheme::Primary,
-                            "Create Team"
+                            "{translate(\"teams-create\")}"
                         }
                     }
                 }

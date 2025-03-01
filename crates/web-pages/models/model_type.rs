@@ -2,6 +2,7 @@
 use daisy_rsx::*;
 use db::ModelType;
 use dioxus::prelude::*;
+use crate::i18n_helper::translate;
 
 #[component]
 pub fn Model(model_type: ModelType) -> Element {
@@ -10,14 +11,14 @@ pub fn Model(model_type: ModelType) -> Element {
             Label {
                 class: "truncate",
                 label_role: LabelRole::Info,
-                "Large Language Model"
+                "{translate(\"model-type-llm\")}"
             }
         ),
         ModelType::Embeddings => rsx!(
             Label {
                 class: "truncate",
                 label_role: LabelRole::Highlight,
-                "Embeddings Model"
+                "{translate(\"model-type-embeddings\")}"
             }
         ),
         ModelType::TextToSpeech => rsx!(

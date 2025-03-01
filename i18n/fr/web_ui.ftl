@@ -164,6 +164,22 @@ teams-invite-pending = Invitation en attente
 teams-remove-user = Retirer l'utilisateur de l'équipe
 teams-delete-invite = Supprimer l'invitation
 
+# Your Teams
+your-teams-title = Vos Équipes
+your-teams-create = Créer une Nouvelle Équipe
+your-teams-teams = Équipes
+your-teams-team = Équipe
+your-teams-creator = Créateur de l'Équipe
+your-teams-action = Action
+your-teams-switch = Passer à cette Équipe
+your-teams-name-not-set = Nom Non Défini
+your-teams-delete = Supprimer l'Équipe
+your-teams-invitations = Vous avez des invitations à rejoindre les équipes suivantes
+your-teams-accept = Accepter l'Invitation
+your-teams-create-new = Créer une nouvelle équipe ?
+your-teams-give-name = Donnez un nom à votre nouvelle équipe
+your-teams-name = Nom
+
 # Audit Trail
 audit-trail-title = Journal d'audit
 audit-trail-empty = Aucun enregistrement d'audit trouvé.
@@ -275,6 +291,16 @@ sidebar-data-integrations = Intégrations de Données
 sidebar-team-members = Membres de l'Équipe
 sidebar-your-teams = Vos Équipes
 sidebar-model-setup = Configuration des Modèles
+
+# Team Roles
+team-role-manager = Gestionnaire d'Équipe
+team-role-collaborator = Collaborateur
+team-no-name = Équipe : Sans Nom
+
+# Model Types
+model-type-embeddings = Modèle d'Embeddings
+model-type-llm = Grand Modèle de Langage
+model-type-ui = Interface Utilisateur
 
 # Basic test messages (for unit tests)
 test-message = Ceci est un message de test
