@@ -127,6 +127,17 @@ pipelines-search = Buscar canalizaciones...
 pipelines-filter = Filtrar canalizaciones
 pipelines-sort = Ordenar canalizaciones
 
+# Document Pipelines
+document-pipelines-title = Canalizaciones de Documentos
+document-pipelines-create = Nueva Canalización de Documentos
+document-pipelines-new = Nueva Canalización
+document-pipelines-automate = Automatice la carga de documentos con nuestra API de carga masiva
+document-pipelines-description = La API de carga conecta sus documentos a conjuntos de datos para su procesamiento por nuestra canalización
+document-pipelines-name = Nombre
+document-pipelines-api-key = Clave API
+document-pipelines-dataset = Conjunto de datos
+document-pipelines-action = Acción
+
 # Teams
 teams-title = Equipos
 teams-create = Crear equipo
@@ -137,6 +148,19 @@ teams-sort = Ordenar equipos
 teams-members = Miembros del equipo
 teams-add-member = Añadir miembro
 teams-remove-member = Eliminar miembro
+teams-invite-new = Invitar nuevo miembro del equipo
+teams-before-invite = Antes de poder invitar a personas a tu equipo, deberás hacer lo siguiente
+teams-set-name = Por favor, establece el nombre de tu equipo
+teams-set-your-name = Por favor, establece tu nombre
+teams-edit-name = Editar nombre
+teams-name-or-email = Nombre o correo electrónico
+teams-status = Estado
+teams-special-privileges = Privilegios especiales
+teams-action = Acción
+teams-active = Activo
+teams-invite-pending = Invitación pendiente
+teams-remove-user = Eliminar usuario del equipo
+teams-delete-invite = Eliminar invitación
 
 # Audit Trail
 audit-trail-title = Registro de auditoría
@@ -170,6 +194,21 @@ api-keys-confirm-delete = ¿Estás seguro de que quieres eliminar esta clave API
 api-keys-never-expires = Nunca expira
 api-keys-active = Activa
 api-keys-inactive = Inactiva
+api-keys-assistant-key = Clave de Asistente
+api-keys-model-key = Clave de Modelo
+api-keys-turn-assistants-api = Convierte cualquiera de tus asistentes en una API
+api-keys-access-assistants = Acceso a asistentes de IA preconfigurados
+api-keys-simplified-integration = Proceso de integración simplificado
+api-keys-ideal-use-cases = Ideal para casos de uso específicos
+api-keys-use-models = Usa modelos existentes para tus propios proyectos
+api-keys-full-control = Control total sobre los parámetros del modelo de IA
+api-keys-flexibility = Flexibilidad para casos de uso avanzados
+api-keys-limits-applied = Se aplicarán límites para garantizar un uso justo
+api-keys-openai-compatibility = Compatibilidad con la API de OpenAI
+api-keys-same-endpoints = Usa los mismos endpoints y parámetros que OpenAI
+api-keys-easy-migration = Fácil migración de OpenAI a nuestro servicio
+api-keys-similar-models = Acceso a modelos y capacidades similares
+api-keys-usage-example = Ejemplo de uso de la API
 
 # Rate Limits
 rate-limits-title = Límites de tasa
@@ -183,6 +222,9 @@ rate-limits-limit = Límite
 rate-limits-period = Período
 rate-limits-resource = Recurso
 rate-limits-status = Estado
+rate-limits-add = Añadir límite
+rate-limits-assign-token = Bionic puede asignar límites de tokens según el rol de un usuario.
+rate-limits-roles-mapped = Los roles se asignan en su sistema de identidad y se mapean aquí a los límites
 
 # Profile
 profile-title = Perfil

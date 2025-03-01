@@ -1,6 +1,7 @@
 #![allow(non_snake_case)]
 use crate::{
     app_layout::{Layout, SideBar},
+    i18n_helper::translate,
     render,
 };
 use assets::files::*;
@@ -21,15 +22,15 @@ pub fn page(
             selected_item: SideBar::ApiKeys,
             team_id: team_id,
             rbac: rbac,
-            title: "API Keys",
+            title: "{translate(\"api-keys-title\")}",
             header: rsx! {
-                h3 { "API Keys" }
+                h3 { "{translate(\"api-keys-title\")}" }
             },
             if api_keys.is_empty() {
                 BlankSlate {
-                    heading: "Looks like you don't have any API keys",
+                    heading: "{translate(\"api-keys-empty\")}",
                     visual: empty_api_keys_svg.name,
-                    description: "API Keys allow you to access our programming interface",
+                    description: "{translate(\"api-keys-description\")}",
                 }
             },
 
@@ -55,19 +56,19 @@ pub fn page(
                 Card {
                     class: "has-data-table",
                     CardHeader {
-                        title: "API Keys"
+                        title: "{translate(\"api-keys-title\")}"
                     }
                     CardBody {
                         table {
                             class: "table table-sm",
                             thead {
-                                th { "Name" }
-                                th { "Type" }
-                                th { "API Key" }
-                                th { "Assistant/Model" }
+                                th { "{translate(\"api-keys-name\")}" }
+                                th { "{translate(\"form-type\")}" }
+                                th { "{translate(\"api-keys-key\")}" }
+                                th { "{translate(\"prompts-title\")}/{translate(\"models-title\")}" }
                                 th {
                                     class: "text-right",
-                                    "Action"
+                                    "{translate(\"common-actions\")}"
                                 }
                             }
                             tbody {
@@ -91,7 +92,7 @@ pub fn page(
                                                 }
                                                 Button {
                                                     class: "api-keys-toggle-visibility",
-                                                    "Show"
+                                                    "{translate(\"common-view\")}"
                                                 }
                                             }
                                         }
@@ -108,7 +109,7 @@ pub fn page(
                                                         key.id, team_id),
                                                     href: "#",
                                                     target: "_top",
-                                                    "Delete"
+                                                    "{translate(\"common-delete\")}"
                                                 }
                                             }
                                         }
@@ -144,14 +145,14 @@ pub fn PromptType(prompt_type: DBPromptType) -> Element {
             Label {
                 class: "mr-2 truncate",
                 label_role: LabelRole::Info,
-                "Model"
+                "{translate(\"models-title\")}"
             }
         ),
         DBPromptType::Assistant => rsx!(
             Label {
                 class: "mr-2 truncate",
                 label_role: LabelRole::Highlight,
-                "Assistant"
+                "{translate(\"prompts-title\")}"
             }
         ),
     }
@@ -164,12 +165,12 @@ fn OpenAICompatibility() -> Element {
         Card {
             class: "mt-8 mb-8",
             CardBody {
-                h2 { class: "card-title", "OpenAI API Compatibility" }
-                p { "Our API is compatible with the OpenAI completionbs API, allowing seamless integration with existing projects and tools." }
+                h2 { class: "card-title", "{translate(\"api-keys-openai-compatibility\")}" }
+                p { "{translate(\"api-keys-warning\")}" }
                 ul { class: "list-disc list-inside mt-4",
-                    li { "Use the same endpoints and parameters as OpenAI" }
-                    li { "Easy migration from OpenAI to our service" }
-                    li { "Access to similar models and capabilities" }
+                    li { "{translate(\"api-keys-same-endpoints\")}" }
+                    li { "{translate(\"api-keys-easy-migration\")}" }
+                    li { "{translate(\"api-keys-similar-models\")}" }
                 }
             }
         }
@@ -181,7 +182,7 @@ fn CodeExamples() -> Element {
     rsx! {
         Card {
             CardHeader {
-                title: "API Usage Example"
+                title: "{translate(\"api-keys-usage-example\")}"
             }
             CardBody {
                 p {
@@ -223,18 +224,18 @@ fn KeySelector() -> Element {
                 CardBody {
                     h2 {
                         class: "card-title",
-                        "Assistant Key"
+                        "{translate(\"prompts-title\")} {translate(\"api-keys-key\")}"
                     }
-                    p { "Turn any of your assistants into an API" }
+                    p { "{translate(\"api-keys-turn-assistants-api\")}" }
                     ul { class: "list-disc list-inside mt-4",
-                        li { "Access to pre-configured AI assistants" }
-                        li { "Simplified integration process" }
-                        li { "Ideal for specific use-cases" }
+                        li { "{translate(\"api-keys-access-assistants\")}" }
+                        li { "{translate(\"api-keys-simplified-integration\")}" }
+                        li { "{translate(\"api-keys-ideal-use-cases\")}" }
                     }
                     div { class: "card-actions justify-end mt-4",
                         Button {
                             drawer_trigger: "create-assistant-key",
-                            "Create an Assistant Key"
+                            "{translate(\"api-keys-create\")}"
                         }
                     }
                 }
@@ -243,17 +244,17 @@ fn KeySelector() -> Element {
             // Model Key Card
             Card {
                 CardBody {
-                    h2 { class: "card-title", "Model Key" }
-                    p { "Use existing models for your own projects" }
+                    h2 { class: "card-title", "{translate(\"models-title\")} {translate(\"api-keys-key\")}" }
+                    p { "{translate(\"api-keys-use-models\")}" }
                     ul { class: "list-disc list-inside mt-4",
-                        li { "Full control over AI model parameters" }
-                        li { "Flexibility for advanced use-cases" }
-                        li { "Limits will be applied to ensure fair use" }
+                        li { "{translate(\"api-keys-full-control\")}" }
+                        li { "{translate(\"api-keys-flexibility\")}" }
+                        li { "{translate(\"api-keys-limits-applied\")}" }
                     }
                     div { class: "card-actions justify-end mt-4",
                         Button {
                             drawer_trigger: "create-model-key",
-                            "Create a Model Key"
+                            "{translate(\"api-keys-create\")}"
                         }
                     }
                 }

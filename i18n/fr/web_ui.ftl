@@ -129,6 +129,17 @@ pipelines-search = Rechercher des pipelines...
 pipelines-filter = Filtrer les pipelines
 pipelines-sort = Trier les pipelines
 
+# Document Pipelines
+document-pipelines-title = Pipelines de Documents
+document-pipelines-create = Nouveau Pipeline de Documents
+document-pipelines-new = Nouveau Pipeline
+document-pipelines-automate = Automatisez le téléchargement de documents avec notre API de téléchargement en masse
+document-pipelines-description = L'API de téléchargement connecte vos documents aux ensembles de données pour leur traitement par notre pipeline
+document-pipelines-name = Nom
+document-pipelines-api-key = Clé API
+document-pipelines-dataset = Ensemble de données
+document-pipelines-action = Action
+
 # Teams
 teams-title = Équipes
 teams-create = Créer une équipe
@@ -139,6 +150,19 @@ teams-sort = Trier les équipes
 teams-members = Membres de l'équipe
 teams-add-member = Ajouter un membre
 teams-remove-member = Supprimer un membre
+teams-invite-new = Inviter un nouveau membre d'équipe
+teams-before-invite = Avant de pouvoir inviter des personnes dans votre équipe, vous devrez faire ce qui suit
+teams-set-name = Veuillez définir le nom de votre équipe
+teams-set-your-name = Veuillez définir votre nom
+teams-edit-name = Modifier le nom
+teams-name-or-email = Nom ou e-mail
+teams-status = Statut
+teams-special-privileges = Privilèges spéciaux
+teams-action = Action
+teams-active = Actif
+teams-invite-pending = Invitation en attente
+teams-remove-user = Retirer l'utilisateur de l'équipe
+teams-delete-invite = Supprimer l'invitation
 
 # Audit Trail
 audit-trail-title = Journal d'audit
@@ -166,12 +190,27 @@ api-keys-status = Statut
 api-keys-copy = Copier
 api-keys-copied = Copié !
 api-keys-description = Les clés API vous permettent de vous authentifier auprès de l'API BionicGPT.
-api-keys-warning = Gardez vos clés API en sécurité. Ne les partagez pas dans des zones accessibles au public comme GitHub, code côté client, etc.
+api-keys-warning = Gardez vos clés API en sécurité. Ne les partagez pas dans des zones accessibles au public comme GitHub, le code côté client, etc.
 api-keys-regenerate = Régénérer
 api-keys-confirm-delete = Êtes-vous sûr de vouloir supprimer cette clé API ?
 api-keys-never-expires = N'expire jamais
 api-keys-active = Active
 api-keys-inactive = Inactive
+api-keys-assistant-key = Clé d'Assistant
+api-keys-model-key = Clé de Modèle
+api-keys-turn-assistants-api = Transformez n'importe lequel de vos assistants en API
+api-keys-access-assistants = Accès aux assistants IA préconfigurés
+api-keys-simplified-integration = Processus d'intégration simplifié
+api-keys-ideal-use-cases = Idéal pour des cas d'utilisation spécifiques
+api-keys-use-models = Utilisez des modèles existants pour vos propres projets
+api-keys-full-control = Contrôle total sur les paramètres du modèle d'IA
+api-keys-flexibility = Flexibilité pour les cas d'utilisation avancés
+api-keys-limits-applied = Des limites seront appliquées pour garantir une utilisation équitable
+api-keys-openai-compatibility = Compatibilité avec l'API OpenAI
+api-keys-same-endpoints = Utilisez les mêmes points de terminaison et paramètres qu'OpenAI
+api-keys-easy-migration = Migration facile d'OpenAI vers notre service
+api-keys-similar-models = Accès à des modèles et capacités similaires
+api-keys-usage-example = Exemple d'utilisation de l'API
 
 # Rate Limits
 rate-limits-title = Limites de taux
@@ -185,6 +224,9 @@ rate-limits-limit = Limite
 rate-limits-period = Période
 rate-limits-resource = Ressource
 rate-limits-status = Statut
+rate-limits-add = Ajouter une limite
+rate-limits-assign-token = Bionic peut attribuer des limites de jetons en fonction du rôle d'un utilisateur.
+rate-limits-roles-mapped = Les rôles sont attribués dans votre système d'identité et mappés ici aux limites
 
 # Profile
 profile-title = Profil

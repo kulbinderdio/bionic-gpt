@@ -1,4 +1,3 @@
-use fluent::FluentResource;
 use i18n_embed::{
     fluent::{FluentLanguageLoader},
     LanguageLoader,

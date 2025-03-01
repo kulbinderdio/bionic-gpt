@@ -1,5 +1,6 @@
 #![allow(non_snake_case)]
 use crate::app_layout::{Layout, SideBar};
+use crate::i18n_helper::translate;
 use assets::files::empty_api_keys_svg;
 use daisy_rsx::*;
 use db::authz::Rbac;
@@ -19,15 +20,15 @@ pub fn page(
                 selected_item: SideBar::DocumentPipelines,
                 team_id: team_id,
                 rbac: rbac,
-                title: "Document Pipelines",
+                title: "{translate(\"document-pipelines-title\")}",
                 header: rsx!(
-                    h3 { "Document Pipelines" }
+                    h3 { "{translate(\"document-pipelines-title\")}" }
                 ),
                 BlankSlate {
-                    heading: "Automate document upload with our bulk upload API",
+                    heading: "{translate(\"document-pipelines-automate\")}",
                     visual: empty_api_keys_svg.name,
-                    description: "The upload API connects your documents to datasets for processing by our pipeline",
-                    primary_action_drawer: Some(("New Document Pipeline".to_string(), "create-api-key".to_string()))
+                    description: "{translate(\"document-pipelines-description\")}",
+                    primary_action_drawer: Some((translate("document-pipelines-create").to_string(), "create-api-key".to_string()))
                 }
 
                 super::key_drawer::KeyDrawer {
@@ -41,30 +42,30 @@ pub fn page(
                 selected_item: SideBar::DocumentPipelines,
                 team_id: team_id,
                 rbac: rbac,
-                title: "Document Pipelines",
+                title: "{translate(\"document-pipelines-title\")}",
                 header: rsx!(
-                    h3 { "Document Pipelines" }
+                    h3 { "{translate(\"document-pipelines-title\")}" }
                     Button {
                         drawer_trigger: "create-api-key",
                         button_scheme: ButtonScheme::Primary,
-                        "New Pipeline"
+                        "{translate(\"document-pipelines-new\")}"
                     }
                 ),
                 Card {
                     class: "has-data-table",
                     CardHeader {
-                        title: "Document Pipelines"
+                        title: "{translate(\"document-pipelines-title\")}"
                     }
                     CardBody {
                         table {
                             class: "table table-sm",
                             thead {
-                                th { "Name" }
-                                th { "API Key" }
-                                th { "Dataset" }
+                                th { "{translate(\"document-pipelines-name\")}" }
+                                th { "{translate(\"document-pipelines-api-key\")}" }
+                                th { "{translate(\"document-pipelines-dataset\")}" }
                                 th {
                                     class: "text-right",
-                                    "Action"
+                                    "{translate(\"document-pipelines-action\")}"
                                 }
                             }
                             tbody {
@@ -92,7 +93,7 @@ pub fn page(
                                                         key.id, team_id),
                                                     href: "#",
                                                     target: "_top",
-                                                    "Delete"
+                                                    "{translate(\"common-delete\")}"
                                                 }
                                             }
                                         }

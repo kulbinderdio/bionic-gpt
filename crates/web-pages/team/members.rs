@@ -1,5 +1,6 @@
 #![allow(non_snake_case)]
 use crate::app_layout::{Layout, SideBar};
+use crate::i18n_helper::translate;
 use assets::files::*;
 use daisy_rsx::*;
 use db::authz::Rbac;
@@ -20,14 +21,14 @@ pub fn page(
             selected_item: SideBar::Team,
             team_id: team.id,
             rbac: rbac.clone(),
-            title: "Team Members",
+            title: "{translate(\"teams-members\")}",
             header: rsx!(
-                h3 { "Team Members" }
+                h3 { "{translate(\"teams-members\")}" }
                 Button {
                     prefix_image_src: "{button_plus_svg.name}",
                     drawer_trigger: "create-invite-form",
                     button_scheme: ButtonScheme::Primary,
-                    "Invite New Team Member"
+                    "{translate(\"teams-invite-new\")}"
                 }
             ),
 
@@ -37,25 +38,25 @@ pub fn page(
                 Card {
                     class: "mb-3",
                     CardHeader {
-                        title: "Before you are able to invite people to your team you will need to do the following"
+                        title: "{translate(\"teams-before-invite\")}"
                     }
                     CardBody {
                         if team.name.is_none() {
                             p {
-                                "Please set your "
+                                "{translate(\"teams-set-name\")} "
                                 a {
                                     href: "#",
                                     "data-drawer-target": "set-name-drawer",
-                                    "teams name"
+                                    "{translate(\"teams-set-name\")}"
                                 }
                             }
                         }
                         if user.first_name.is_none() {
                             p {
-                                "Please set your "
+                                "{translate(\"teams-set-your-name\")} "
                                 a {
                                     href: crate::routes::profile::Profile{team_id: team.id}.to_string(),
-                                    "name"
+                                    "{translate(\"form-name\")}"
                                 }
                             }
                         }
@@ -71,23 +72,23 @@ pub fn page(
                         class: "ml-2",
                         drawer_trigger: "set-name-drawer",
                         button_size: ButtonSize::Small,
-                        "Edit Name"
+                        "{translate(\"teams-edit-name\")}"
                     }
                 }
                 CardBody {
                     table {
                         class: "table table-sm",
                         thead {
-                            th { "Name or Email" }
-                            th { "Status" }
+                            th { "{translate(\"teams-name-or-email\")}" }
+                            th { "{translate(\"teams-status\")}" }
                             th {
                                 class: "max-sm:hidden",
-                                "Special Privelages"
+                                "{translate(\"teams-special-privileges\")}"
                             }
                             if rbac.can_make_invitations() {
                                 th {
                                     class: "text-right",
-                                    "Action"
+                                    "{translate(\"teams-action\")}"
                                 }
                             }
                         }
@@ -118,7 +119,7 @@ pub fn page(
                                     td {
                                         Label {
                                             label_role: LabelRole::Success,
-                                            "Active"
+                                            "{translate(\"teams-active\")}"
                                         }
                                     }
                                     td {
@@ -140,7 +141,7 @@ pub fn page(
                                                         member.id, member.team_id),
                                                     href: "#",
                                                     target: "_top",
-                                                    "Remove User From Team"
+                                                    "{translate(\"teams-remove-user\")}"
                                                 }
                                             }
                                         }
@@ -163,7 +164,7 @@ pub fn page(
                                     td {
                                         Label {
                                             label_role: LabelRole::Highlight,
-                                            "Invite Pending"
+                                            "{translate(\"teams-invite-pending\")}"
                                         }
                                     }
                                     td {
@@ -185,7 +186,7 @@ pub fn page(
                                                         invite.id, invite.team_id),
                                                     href: "#",
                                                     target: "_top",
-                                                    "Delete Invite"
+                                                    "{translate(\"teams-delete-invite\")}"
                                                 }
                                             }
                                         }

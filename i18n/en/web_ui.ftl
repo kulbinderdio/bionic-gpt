@@ -127,6 +127,17 @@ pipelines-search = Search pipelines...
 pipelines-filter = Filter pipelines
 pipelines-sort = Sort pipelines
 
+# Document Pipelines
+document-pipelines-title = Document Pipelines
+document-pipelines-create = New Document Pipeline
+document-pipelines-new = New Pipeline
+document-pipelines-automate = Automate document upload with our bulk upload API
+document-pipelines-description = The upload API connects your documents to datasets for processing by our pipeline
+document-pipelines-name = Name
+document-pipelines-api-key = API Key
+document-pipelines-dataset = Dataset
+document-pipelines-action = Action
+
 # Teams
 teams-title = Teams
 teams-create = Create Team
@@ -137,6 +148,19 @@ teams-sort = Sort teams
 teams-members = Team Members
 teams-add-member = Add Member
 teams-remove-member = Remove Member
+teams-invite-new = Invite New Team Member
+teams-before-invite = Before you are able to invite people to your team you will need to do the following
+teams-set-name = Please set your teams name
+teams-set-your-name = Please set your name
+teams-edit-name = Edit Name
+teams-name-or-email = Name or Email
+teams-status = Status
+teams-special-privileges = Special Privileges
+teams-action = Action
+teams-active = Active
+teams-invite-pending = Invite Pending
+teams-remove-user = Remove User From Team
+teams-delete-invite = Delete Invite
 
 # Audit Trail
 audit-trail-title = Audit Trail
@@ -170,6 +194,21 @@ api-keys-confirm-delete = Are you sure you want to delete this API key?
 api-keys-never-expires = Never expires
 api-keys-active = Active
 api-keys-inactive = Inactive
+api-keys-assistant-key = Assistant Key
+api-keys-model-key = Model Key
+api-keys-turn-assistants-api = Turn any of your assistants into an API
+api-keys-access-assistants = Access to pre-configured AI assistants
+api-keys-simplified-integration = Simplified integration process
+api-keys-ideal-use-cases = Ideal for specific use-cases
+api-keys-use-models = Use existing models for your own projects
+api-keys-full-control = Full control over AI model parameters
+api-keys-flexibility = Flexibility for advanced use-cases
+api-keys-limits-applied = Limits will be applied to ensure fair use
+api-keys-openai-compatibility = OpenAI API Compatibility
+api-keys-same-endpoints = Use the same endpoints and parameters as OpenAI
+api-keys-easy-migration = Easy migration from OpenAI to our service
+api-keys-similar-models = Access to similar models and capabilities
+api-keys-usage-example = API Usage Example
 
 # Rate Limits
 rate-limits-title = Rate Limits
@@ -183,6 +222,9 @@ rate-limits-limit = Limit
 rate-limits-period = Period
 rate-limits-resource = Resource
 rate-limits-status = Status
+rate-limits-add = Add Limit
+rate-limits-assign-token = Bionic can assign token limits based on a users role.
+rate-limits-roles-mapped = Roles are assigned in your identity system and mapped here to limits
 
 # Profile
 profile-title = Profile
