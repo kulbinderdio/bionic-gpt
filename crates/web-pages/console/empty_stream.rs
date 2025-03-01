@@ -1,5 +1,6 @@
 #![allow(non_snake_case)]
 use crate::routes;
+use crate::i18n_helper::translate;
 
 use assets::files::*;
 use db::queries::prompts::SinglePrompt;
@@ -18,7 +19,7 @@ pub fn EmptyStream(prompt: SinglePrompt, conversation_id: Option<i64>, team_id: 
             class: "mx-auto mt-12 max-w-3xl text-center",
             h1 {
                 class: "mb-8 text-2xl font-semibold relative before:absolute before:inset-0 before:animate-typewriter before:bg-base-100",
-                "What can I help with?"
+                "{translate(\"console-help-prompt\")}"
             }
             div {
                 class: "grid grid-cols-2 md:grid-cols-4 pl-2 pr-2 max-w-3xl flex-wrap items-stretch justify-center gap-4",

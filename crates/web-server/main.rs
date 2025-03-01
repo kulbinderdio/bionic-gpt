@@ -8,9 +8,11 @@ pub mod documents;
 pub mod email;
 pub mod errors;
 pub mod history;
+pub mod i18n;
 pub mod jwt;
 pub mod layout;
 pub mod metrics;
+pub mod middleware;
 pub mod models;
 pub mod oidc_endpoint;
 pub mod pipelines;
@@ -58,6 +60,7 @@ async fn main() {
         .merge(rate_limits::routes())
         .merge(team::routes())
         .merge(teams::routes())
+        .layer(axum::middleware::from_fn(middleware::i18n::i18n_middleware))
         .layer(Extension(config.clone()))
         .layer(Extension(pool.clone()));
 

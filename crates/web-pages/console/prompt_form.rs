@@ -1,5 +1,6 @@
 #![allow(non_snake_case)]
 use crate::routes;
+use crate::i18n_helper::translate;
 
 use assets::files::*;
 use daisy_rsx::*;
@@ -125,7 +126,7 @@ pub fn Form(
                 TextArea {
                     class: "pt-3 auto-expand max-h-96 text-sm submit-on-enter flex-1 resize-none",
                     rows: "1",
-                    placeholder: "Ask a question...",
+                    placeholder: "{translate(\"console-ask-placeholder\")}",
                     name: "message",
                     disabled: lock_console
                 }
@@ -137,7 +138,11 @@ pub fn Form(
             }
             p {
                 class: "text-xs text-center p-2",
-                "{disclaimer}"
+                if disclaimer.is_empty() {
+                    "{translate(\"console-disclaimer\")}"
+                } else {
+                    "{disclaimer}"
+                }
             }
         }
     }

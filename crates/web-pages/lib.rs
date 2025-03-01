@@ -10,6 +10,7 @@ pub mod datasets;
 pub mod documents;
 pub mod hero;
 pub mod history;
+pub mod i18n_helper;
 pub mod logout_form;
 pub mod security;
 //pub mod model_form;
@@ -22,6 +23,10 @@ pub mod rate_limits;
 pub mod snackbar;
 pub mod team;
 pub mod teams;
+
+// Re-export the translation macro
+pub use crate::i18n_helper::translate;
+pub use crate::i18n_helper::translate_with_args;
 
 pub fn render(page: Element) -> String {
     let html = dioxus_ssr::render_element(page);

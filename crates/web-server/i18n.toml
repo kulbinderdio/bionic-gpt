@@ -1,0 +1,3 @@
+[fluent]
+assets_dir = "i18n/"
+default_language = "en"

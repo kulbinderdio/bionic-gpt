@@ -15,6 +15,9 @@ assets = { path = "../web-assets" }
 web-pages = { path = "../web-pages" }
 embeddings-api = { path = "../embeddings-api" }
 
+# Internationalization
+i18n = { path = "../i18n" }
+
 axum = { version = "0.8", features = ["multipart"] }
 axum-extra = { version = "0.10.0", features = ["form", "typed-routing"] }
 tokio = { version = "1", features = ["rt-multi-thread"] }
@@ -42,4 +45,8 @@ axum_typed_multipart = { version = "0.15.1", default-features = false }
 
 [dev-dependencies]
 time = "0.3.36"
-
+hyper = { version = "0.14", features = ["full"] }
+tokio-test = "0.4.2"
+unic-langid = "0.9.1"
+i18n-embed = { version = "0.14.1", features = ["fluent-system"] }
+once_cell = "1.18.0"

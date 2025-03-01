@@ -2,6 +2,7 @@
 use super::logout_form::LogoutForm;
 use super::snackbar::Snackbar;
 use crate::profile_popup::ProfilePopup;
+use crate::i18n_helper::translate;
 use assets::files::*;
 use daisy_rsx::{NavGroup, NavItem};
 use db::authz::Rbac;
@@ -67,14 +68,14 @@ pub fn Layout(props: LayoutProps) -> Element {
                             selected_item_id: props.selected_item.to_string(),
                             href: super::routes::console::Index { team_id: props.team_id },
                             icon: nav_service_requests_svg.name,
-                            title: "Chat"
+                            title: "{translate(\"sidebar-chat\")}"
                         }
                         NavItem {
                             id: SideBar::History.to_string(),
                             selected_item_id: props.selected_item.to_string(),
                             href: super::routes::history::Index { team_id: props.team_id },
                             icon: nav_history_svg.name,
-                            title: "Chat History"
+                            title: "{translate(\"sidebar-chat-history\")}"
                         }
                     )
                 }
@@ -88,7 +89,7 @@ pub fn Layout(props: LayoutProps) -> Element {
                                     selected_item_id: props.selected_item.to_string(),
                                     href: super::routes::prompts::Index{team_id: props.team_id},
                                     icon: assistant_svg.name,
-                                    title: "Explore Assistants"
+                                    title: "{translate(\"sidebar-explore-assistants\")}"
                                 }
                             }
                             NavItem {
@@ -96,7 +97,7 @@ pub fn Layout(props: LayoutProps) -> Element {
                                 selected_item_id: props.selected_item.to_string(),
                                 href: super::routes::datasets::Index{team_id: props.team_id},
                                 icon: nav_ccsds_data_svg.name,
-                                title: "Datasets & Documents"
+                                title: "{translate(\"sidebar-datasets-documents\")}"
                             }
                         )
                     }
@@ -110,14 +111,14 @@ pub fn Layout(props: LayoutProps) -> Element {
                                 selected_item_id: props.selected_item.to_string(),
                                 href: super::routes::api_keys::Index { team_id: props.team_id },
                                 icon: nav_api_keys_svg.name,
-                                title: "API Keys"
+                                title: "{translate(\"api-keys-title\")}"
                             }
                             NavItem {
                                 id: SideBar::DocumentPipelines.to_string(),
                                 selected_item_id: props.selected_item.to_string(),
                                 href: super::routes::document_pipelines::Index { team_id: props.team_id },
                                 icon: nav_ccsds_data_svg.name,
-                                title: "Data Integrations"
+                                title: "{translate(\"sidebar-data-integrations\")}"
                             }
                         )
                     }
@@ -131,14 +132,14 @@ pub fn Layout(props: LayoutProps) -> Element {
                                 selected_item_id: props.selected_item.to_string(),
                                 href: super::routes::team::Index{team_id:props.team_id},
                                 icon: nav_members_svg.name,
-                                title: "Team Members"
+                                title: "{translate(\"sidebar-team-members\")}"
                             }
                             NavItem {
                                 id: SideBar::Switch.to_string(),
                                 selected_item_id: props.selected_item.to_string(),
                                 href: super::routes::teams::Switch{team_id:props.team_id},
                                 icon: nav_teams_svg.name,
-                                title: "Your Teams"
+                                title: "{translate(\"sidebar-your-teams\")}"
                             }
                         )
                     }
@@ -152,21 +153,21 @@ pub fn Layout(props: LayoutProps) -> Element {
                                 selected_item_id: props.selected_item.to_string(),
                                 href: super::routes::models::Index{team_id: props.team_id},
                                 icon: nav_phonebook_svg.name,
-                                title: "Model Setup"
+                                title: "{translate(\"sidebar-model-setup\")}"
                             }
                             NavItem {
                                 id: SideBar::AuditTrail.to_string(),
                                 selected_item_id: props.selected_item.to_string(),
                                 href: super::routes::audit_trail::Index { team_id: props.team_id },
                                 icon: nav_audit_svg.name,
-                                title: "Audit Trail"
+                                title: "{translate(\"audit-trail-title\")}"
                             }
                             NavItem {
                                 id: SideBar::RateLimits.to_string(),
                                 selected_item_id: props.selected_item.to_string(),
                                 href: super::routes::rate_limits::Index { team_id: props.team_id },
                                 icon: limits_svg.name,
-                                title: "Rate Limits"
+                                title: "{translate(\"rate-limits-title\")}"
                             }
                             /***NavItem {
                                 id: SideBar::Security.to_string(),

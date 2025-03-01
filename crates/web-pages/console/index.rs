@@ -1,6 +1,7 @@
 #![allow(non_snake_case)]
 use crate::app_layout::SideBar;
 use crate::console::model_popup::ModelPopup;
+use crate::i18n_helper::translate;
 use db::authz::Rbac;
 use db::queries::prompts::{Prompt, SinglePrompt};
 use dioxus::prelude::*;
@@ -17,7 +18,7 @@ pub fn new_conversation(
             team_id,
             rbac: rbac.clone(),
             prompt: prompt.clone(),
-            title: "AI Chat Console",
+            title: translate("console-title"),
             selected_item: SideBar::Console,
             chats_with_chunks: vec![],
             is_tts_disabled: true,
