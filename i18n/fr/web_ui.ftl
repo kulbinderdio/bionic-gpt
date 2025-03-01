@@ -102,6 +102,7 @@ datasets-empty = Aucun ensemble de données trouvé.
 datasets-search = Rechercher des ensembles de données...
 datasets-filter = Filtrer les ensembles de données
 datasets-sort = Trier les ensembles de données
+datasets-empty-description = Les ensembles de données vous permettent d'organiser vos documents comme des dossiers
 
 # Models
 models-title = Modèles
@@ -118,6 +119,7 @@ prompts-empty = Aucune invite trouvée.
 prompts-search = Rechercher des invites...
 prompts-filter = Filtrer les invites
 prompts-sort = Trier les invites
+prompts-discover = Découvrez et créez des robots de chat personnalisés qui combinent instructions, connaissances supplémentaires et toute combinaison de compétences.
 
 # Pipelines
 pipelines-title = Pipelines
@@ -163,6 +165,13 @@ api-keys-expires = Expire
 api-keys-status = Statut
 api-keys-copy = Copier
 api-keys-copied = Copié !
+api-keys-description = Les clés API vous permettent de vous authentifier auprès de l'API BionicGPT.
+api-keys-warning = Gardez vos clés API en sécurité. Ne les partagez pas dans des zones accessibles au public comme GitHub, code côté client, etc.
+api-keys-regenerate = Régénérer
+api-keys-confirm-delete = Êtes-vous sûr de vouloir supprimer cette clé API ?
+api-keys-never-expires = N'expire jamais
+api-keys-active = Active
+api-keys-inactive = Inactive
 
 # Rate Limits
 rate-limits-title = Limites de taux
@@ -208,6 +217,12 @@ console-title = Console de Chat IA
 console-help-prompt = Comment puis-je vous aider ?
 console-ask-placeholder = Posez une question...
 console-disclaimer = Les LLMs peuvent faire des erreurs. Vérifiez les informations importantes.
+
+# Chat History
+history-empty = Il semble que vous n'ayez pas encore eu de conversations
+history-title = Historique de Chat
+history-search = Rechercher l'historique
+history-empty-summary = Quand vous le ferez, un résumé apparaîtra sur cette page
 
 # Sidebar
 sidebar-chat = Chat

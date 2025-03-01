@@ -163,6 +163,13 @@ api-keys-expires = Expira
 api-keys-status = Estado
 api-keys-copy = Copiar
 api-keys-copied = ¡Copiado!
+api-keys-description = Las claves API te permiten autenticarte con la API de BionicGPT.
+api-keys-warning = Mantén tus claves API seguras. No las compartas en áreas de acceso público como GitHub, código del lado del cliente, etc.
+api-keys-regenerate = Regenerar
+api-keys-confirm-delete = ¿Estás seguro de que quieres eliminar esta clave API?
+api-keys-never-expires = Nunca expira
+api-keys-active = Activa
+api-keys-inactive = Inactiva
 
 # Rate Limits
 rate-limits-title = Límites de tasa
@@ -208,6 +215,18 @@ console-title = Consola de Chat de IA
 console-help-prompt = ¿En qué puedo ayudarte?
 console-ask-placeholder = Haz una pregunta...
 console-disclaimer = Los LLMs pueden cometer errores. Verifica la información importante.
+
+# Chat History
+history-empty = Parece que aún no has tenido ninguna conversación
+history-title = Historial de Chat
+history-search = Buscar Historial
+history-empty-summary = Cuando lo hagas, aparecerá un resumen en esta página
+
+# Prompts
+prompts-discover = Descubre y crea bots de chat personalizados que combinan instrucciones, conocimiento adicional y cualquier combinación de habilidades.
+
+# Datasets
+datasets-empty-description = Los conjuntos de datos te permiten organizar tus documentos como carpetas
 
 # Sidebar
 sidebar-chat = Chat

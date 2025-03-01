@@ -1,6 +1,7 @@
 #![allow(non_snake_case)]
 use crate::app_layout::{Layout, SideBar};
 use crate::hero::Hero;
+use crate::i18n_helper::translate;
 use crate::prompts::prompt_card::PromptCard;
 use assets::files::*;
 use daisy_rsx::*;
@@ -27,12 +28,12 @@ pub fn page(
             selected_item: SideBar::Prompts,
             team_id: team_id,
             rbac: rbac.clone(),
-            title: "Assistants",
+            title: "{translate(\"prompts-title\")}",
             header: rsx!(
                 h3 {
                     span {
                         class: "hidden lg:block",
-                        "Assistants"
+                        "{translate(\"prompts-title\")}"
                     }
                 }
                 div {
@@ -45,15 +46,14 @@ pub fn page(
                         prefix_image_src: "{button_plus_svg.name}",
                         modal_trigger: "new-prompt-form",
                         button_scheme: ButtonScheme::Primary,
-                        "New Assistant"
+                        "{translate(\"prompts-create\")}"
                     }
                 }
             ),
 
             Hero {
-                heading: "Assistants".to_string(),
-                subheading: "Discover and create custom chat bots that combine instructions,
-                    extra knowledge, and any combination of skills.".to_string()
+                heading: translate("prompts-title").to_string(),
+                subheading: translate("prompts-discover").to_string()
             }
 
             if ! prompts.is_empty() {
@@ -121,7 +121,7 @@ pub fn page(
                 trim_ratio: 80,
                 temperature: 0.7,
                 description: "".to_string(),
-                disclaimer: "LLMs can make mistakes. Check important info.".to_string(),
+                disclaimer: translate("console-disclaimer").to_string(),
                 example1: None,
                 example2: None,
                 example3: None,

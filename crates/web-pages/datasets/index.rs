@@ -1,6 +1,7 @@
 #![allow(non_snake_case)]
 use crate::app_layout::Layout;
 use crate::app_layout::SideBar;
+use crate::i18n_helper::translate;
 use assets::files::*;
 use daisy_rsx::*;
 use db::authz::Rbac;
@@ -20,38 +21,38 @@ pub fn page(
             selected_item: SideBar::Datasets,
             team_id: team_id,
             rbac: rbac.clone(),
-            title: "Datasets",
+            title: "{translate(\"datasets-title\")}",
             header: rsx!(
-                h3 { "Datasets" }
+                h3 { "{translate(\"datasets-title\")}" }
                 Button {
                     prefix_image_src: "{button_plus_svg.name}",
                     drawer_trigger: "new-dataset-form",
                     button_scheme: ButtonScheme::Primary,
-                    "Add Dataset"
+                    "{translate(\"datasets-create\")}"
                 }
             ),
 
             if datasets.is_empty() {
                 BlankSlate {
-                    heading: "Looks like you don't have any datasets yet",
+                    heading: "{translate(\"datasets-empty\")}",
                     visual: nav_ccsds_data_svg.name,
-                    description: "Datasets allow you to organize your documents like folders"
+                    description: "{translate(\"datasets-empty-description\")}"
                 }
             } else {
                 Card {
                     class: "has-data-table",
                     CardHeader {
-                        title: "Datasets"
+                        title: "{translate(\"datasets-title\")}"
                     }
                     CardBody {
                         table {
                             class: "table table-sm",
                             thead {
-                                th { "Name" }
-                                th { "Visibility" }
+                                th { "{translate(\"form-name\")}" }
+                                th { "{translate(\"form-status\")}" }
                                 th {
                                     class: "max-sm:hidden",
-                                    "Document Count"
+                                    "{translate(\"documents-title\")}"
                                 }
                                 th {
                                     class: "max-sm:hidden",
@@ -59,7 +60,7 @@ pub fn page(
                                 }
                                 th {
                                     class: "text-right",
-                                    "Action"
+                                    "{translate(\"common-actions\")}"
                                 }
                             }
                             tbody {
@@ -96,7 +97,7 @@ pub fn page(
                                                 DropDownLink {
                                                     href: crate::routes::documents::Index{team_id, dataset_id: dataset.id}.to_string(),
                                                     target: "_top",
-                                                    "View"
+                                                    "{translate(\"common-view\")}"
                                                 }
 
                                                 if rbac.can_edit_dataset(dataset) {
@@ -105,7 +106,7 @@ pub fn page(
                                                             dataset.id, team_id),
                                                         href: "#",
                                                         target: "_top",
-                                                        "Edit"
+                                                        "{translate(\"common-edit\")}"
                                                     }
                                                 }
                                                 DropDownLink {
@@ -113,7 +114,7 @@ pub fn page(
                                                         dataset.id, team_id),
                                                     href: "#",
                                                     target: "_top",
-                                                    "Delete"
+                                                    "{translate(\"common-delete\")}"
                                                 }
                                             }
                                         }
